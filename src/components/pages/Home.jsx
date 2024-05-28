@@ -14,7 +14,7 @@ import main from "./../../img/main.jpg";
 const HomePage = () => {
   return (
     <HomeSection>
-      <it add>
+      <LeftColumn>
         <MainTitle>
           The road to the <span>depths</span> of the human soul
         </MainTitle>
@@ -25,7 +25,7 @@ const HomePage = () => {
         <AccentButton>
           Get started <i className="arrow-icon"></i>
         </AccentButton>
-      </it>
+      </LeftColumn>
 
       <RightColumn>
         <MainImg src={main} alt="Psychologist" />
