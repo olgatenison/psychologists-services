@@ -1,33 +1,48 @@
 import React from "react";
+import MainTitle from "../generic/MainTitle/MainTitle";
+import AccentButton from "../generic/AccentButton/AccentButton.jsx";
+import {
+  HomeSection,
+  LeftColumn,
+  Subtitle,
+  RightColumn,
+  MainImg,
+  MainQuestion,
+} from "./Home.styles.js";
+import main from "./../../img/main.jpg";
 
 const HomePage = () => {
   return (
-    <section className="home-section">
-      <div className="left-column">
-        <h1>
+    <HomeSection>
+      <it add>
+        <MainTitle>
           The road to the <span>depths</span> of the human soul
-        </h1>
-        <p>
+        </MainTitle>
+        <Subtitle>
           We help you to reveal your potential, overcome challenges and find a
           guide in your own life with the help of our experienced psychologists.
-        </p>
-        <button className="green-button">
+        </Subtitle>
+        <AccentButton>
           Get started <i className="arrow-icon"></i>
-        </button>
-      </div>
+        </AccentButton>
+      </it>
 
-      <div className="right-column">
-        <img src="path/to/image.jpg" alt="Psychologist" />
+      <RightColumn>
+        <MainImg src={main} alt="Psychologist" />
         <div className="info-box">
           <i className="icon"></i>
-          <p>Experienced psychologists</p>
+          <div>
+            <p>
+              Experienced psychologists<span>15,000 </span>
+            </p>
+          </div>
         </div>
-        <div className="info-box">
+        <MainQuestion>?</MainQuestion>
+        <MainUser>
           <i className="icon"></i>
-          <p>15,000</p>
-        </div>
-      </div>
-    </section>
+        </MainUser>
+      </RightColumn>
+    </HomeSection>
   );
 };
 

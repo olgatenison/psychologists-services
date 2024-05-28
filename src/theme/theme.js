@@ -1,8 +1,10 @@
-export const greenTheme = {
+export const theme = {
   colors: {
-    maine_accent: "#54BE96",
+    main_accent: "#54BE96",
     hoverred_accent: "#36A379",
     light_accent: "#e1f1ea",
+    main_question: "#4535AF",
+    main_user: "#FBC75E",
 
     white: "#FBFBFB",
     black: "#191A15",
