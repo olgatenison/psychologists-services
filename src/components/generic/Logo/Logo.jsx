@@ -1,3 +1,6 @@
+import React from "react";
+import { LogorWrapper } from "./Logo.styles";
+
 const Logo = () => {
   return (
     <>

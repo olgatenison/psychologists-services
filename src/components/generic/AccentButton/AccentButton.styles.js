@@ -11,13 +11,18 @@ export const AccentButtonleStyled = styled.button`
   font-weight: 500;
   display: inline-flex;
   align-items: center;
-  width: auto;
-
+  width: fit-content;
+  text-overflow: ellipsis;
   &:hover {
     background-color: ${({ theme }) => theme.colors.hoverred_accent};
   }
-
-  .arrow-icon {
-    margin-left: 18px;
+  div {
+    display: flex;
+    gap: 18px;
+  }
+  svg {
+    width: 24px;
+    height: 24px;
+    fill: ${({ theme }) => theme.colors.white};
   }
 `;
