@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const HomeSection = styled.section`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding-top: 78px;
   padding-bottom: 97px;
@@ -10,13 +10,13 @@ export const HomeSection = styled.section`
 `;
 
 export const LeftColumn = styled.div`
-  max-width: 50%;
-  padding: 20px;
+  max-width: 60%;
+
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   gap: 20px;
-  padding-right: 100px;
+  padding-right: 80px;
 `;
 
 export const Subtitle = styled.p`
@@ -28,7 +28,7 @@ export const Subtitle = styled.p`
 `;
 
 export const RightColumn = styled.div`
-  max-width: 50%;
+  max-width: 40%;
   padding: 20px;
   margin: 0 auto;
 
@@ -36,7 +36,7 @@ export const RightColumn = styled.div`
 `;
 
 export const MainImg = styled.img`
-  max-width: 464px;
+  max-width: 434px;
   max-height: 526px;
   border-radius: 10px;
 `;
@@ -87,7 +87,7 @@ export const MainUser = styled.div`
 export const MainInfoBox = styled.div`
   position: absolute;
   bottom: 95px;
-  left: -80px;
+  left: -70px;
   border-radius: 20px;
   width: 311px;
   height: 118px;

@@ -1,7 +1,14 @@
 import React from "react";
 import Logo from "./../../generic/Logo/Logo";
 import AccentButton from "./../../generic/AccentButton/AccentButton";
-import { HeaderWrapper, Nav, NavList } from "./Header.styles";
+import OutlineButton from "./../../generic/OutlineButton/OutlineButton";
+import {
+  HeaderWrapper,
+  Nav,
+  NavList,
+  ButtonList,
+  NavLink,
+} from "./Header.styles";
 
 const Header = () => {
   return (
@@ -9,15 +16,15 @@ const Header = () => {
       <Logo></Logo>
       <Nav>
         <NavList>
-          <li>Home</li>
-          <li>Psychologists</li>
-          <li>Favorites</li>
+          <NavLink>Home</NavLink>
+          <NavLink className="active">Psychologists</NavLink>
+          <NavLink>Favorites</NavLink>
         </NavList>
       </Nav>
-      <div>
-        <button>Log In</button>
+      <ButtonList>
+        <OutlineButton>Log In</OutlineButton>
         <AccentButton>Registration</AccentButton>
-      </div>
+      </ButtonList>
     </HeaderWrapper>
   );
 };

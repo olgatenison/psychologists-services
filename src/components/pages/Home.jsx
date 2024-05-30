@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import MainTitle from "../generic/MainTitle/MainTitle";
-import AccentButton from "../generic/AccentButton/AccentButton.jsx";
+import MainButton from "../generic/MainButton/MainButton.jsx";
 import {
   HomeSection,
   LeftColumn,
@@ -17,8 +17,6 @@ import main from "./../../img/main.jpg";
 // import Card from "../layout/Card/Card.jsx";
 import Modal from "./../layout/Modal/Modal.jsx";
 import svg from "../../img/svg/sprite.svg";
-import Logo from "../generic/Logo/Logo.jsx";
-import Header from "../layout/Header/Header.jsx";
 
 const HomePage = () => {
   // open and closeModal using Portal
@@ -28,8 +26,6 @@ const HomePage = () => {
 
   return (
     <>
-      <Header></Header>
-
       {/* <button onClick={openModal}>Log In</button> */}
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         <h2>Modal Title</h2>
@@ -45,14 +41,14 @@ const HomePage = () => {
             guide in your own life with the help of our experienced
             psychologists.
           </Subtitle>
-          <AccentButton>
+          <MainButton>
             <div>
               <p>Get started</p>
               <svg>
                 <use href={`${svg}#icon-arrow-2`} />
               </svg>
             </div>
-          </AccentButton>
+          </MainButton>
         </LeftColumn>
 
         <RightColumn>
