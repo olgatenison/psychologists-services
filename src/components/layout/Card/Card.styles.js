@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-
 export const CardContainer = styled.div`
   background-color: #fff;
   border-radius: 10px;
@@ -23,28 +22,45 @@ export const CardHeader = styled.div`
 
 export const Role = styled.p`
   font-size: 16px;
-  color: #555;
+  font-weight: 500;
+  color: ${({ theme }) => theme.colors.grey};
 `;
 
 export const Name = styled.h2`
   font-size: 24px;
+  font-weight: 500;
+  color: ${({ theme }) => theme.colors.black};
   margin: 0;
 `;
 
 export const Rating = styled.div`
   display: flex;
   align-items: center;
-  gap: 10px;
-
+  gap: 13px;
+  font-size: 16px;
+  font-weight: 500;
   span {
-    font-size: 16px;
-    color: #888;
+    color: ${({ theme }) => theme.colors.black};
+  }
+  .grey {
+    color: ${({ theme }) => theme.colors.grey};
+  }
+  .green {
+    color: ${({ theme }) => theme.colors.green_online};
+  }
+  .star {
+    width: 16px;
+    height: 16px;
+    left: 0px;
+    margin-right: -5px;
   }
 `;
 
-export const HeartIcon = styled.span`
-  font-size: 20px;
-  color: red;
+export const HeartIcon = styled.svg`
+  width: 26px;
+  height: 26px;
+  fill: ${({ theme }) => theme.colors.white};
+  stroke: ${({ theme }) => theme.colors.black};
 `;
 
 export const CardInfo = styled.div`

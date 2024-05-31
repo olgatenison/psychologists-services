@@ -20,6 +20,8 @@ import {
   Button,
   ReadMoreButton,
 } from "./Card.styles.js";
+import svg from "../../../img/svg/sprite.svg";
+import start from "../../../img/svg/star.svg";
 
 const Card = () => {
   const [expanded, setExpanded] = useState(false);
@@ -30,17 +32,25 @@ const Card = () => {
 
   return (
     <CardContainer>
+      <img src="profile-image.jpg" alt="Dr. Sarah Davis" />
       <CardHeader>
-        <img src="profile-image.jpg" alt="Dr. Sarah Davis" />
         <div>
           <Role>Psychologist</Role>
-          <Name>Dr. Sarah Davis</Name>
-          <Rating>
-            <span>⭐ Rating: 4.75</span>
-            <span>| Price / 1 hour: 120$</span>
-            <HeartIcon>❤️</HeartIcon>
-          </Rating>
+          <Name>Dr. Sarah Davis</Name>{" "}
         </div>
+        <Rating>
+          <img src={start} alt="star" className="star" />
+          <div>
+            <span className="tostar"> Rating: 4.75</span>
+          </div>
+          <div className="grey">|</div>
+          <div>
+            Price / 1 hour:<span className="green"> 120$</span>
+          </div>
+          <HeartIcon>
+            <use href={`${svg}#icon-like`} />
+          </HeartIcon>
+        </Rating>
       </CardHeader>
       <CardInfo>
         <Tag>Experience: 12 years</Tag>
