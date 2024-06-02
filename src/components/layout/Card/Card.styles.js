@@ -10,7 +10,8 @@ export const CardContainer = styled.div`
 
 export const CardHeader = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: space-between;
 
   img {
     border-radius: 50%;
@@ -65,7 +66,7 @@ export const HeartIcon = styled.svg`
 
 export const CardInfo = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  justify-content: start;
   gap: 10px;
   margin: 20px 0;
 `;
