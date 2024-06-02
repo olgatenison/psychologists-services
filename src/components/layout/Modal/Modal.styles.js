@@ -18,7 +18,7 @@ export const ModalContent = styled.div`
   padding: 64px;
   border-radius: 30px;
   position: relative;
-  min-width: 300px;
+  max-width: 566px;
 `;
 
 export const CloseButton = styled.button`

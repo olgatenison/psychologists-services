@@ -1,8 +1,10 @@
 import React from "react";
 import { AccentButtonleStyled } from "./AccentButton.styles.js";
 
-const AccentButton = ({ children }) => {
-  return <AccentButtonleStyled>{children}</AccentButtonleStyled>;
+const AccentButton = ({ onClick, children }) => {
+  return (
+    <AccentButtonleStyled onClick={onClick}>{children}</AccentButtonleStyled>
+  );
 };
 
 export default AccentButton;

@@ -14,7 +14,7 @@ import {
   WhiteDivSvg,
 } from "./Home.styles.js";
 import main from "./../../img/main.jpg";
-import Card from "../layout/Card/Card.jsx";
+// import Card from "../layout/Card/Card.jsx";
 import Modal from "./../layout/Modal/Modal.jsx";
 import svg from "../../img/svg/sprite.svg";
 
@@ -27,7 +27,7 @@ const HomePage = () => {
   return (
     <>
       {/* <button onClick={openModal}>Log In</button> */}
-      <Card></Card>
+      {/* <Card></Card> */}
       <HomeSection>
         <LeftColumn>
           <MainTitle>
