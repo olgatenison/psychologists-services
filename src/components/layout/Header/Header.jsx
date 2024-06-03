@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import Logo from "./../../generic/Logo/Logo";
 import AccentButton from "./../../generic/AccentButton/AccentButton";
 import OutlineButton from "./../../generic/OutlineButton/OutlineButton";
+import Modal from "./../Modal/Modal";
+import LoginForm from "./../LoginForm/LoginForm";
+import RegistrationForm from "./../RegistrationForm/RegistrationForm";
 import {
   HeaderWrapper,
   Nav,
@@ -9,9 +12,6 @@ import {
   ButtonList,
   NavLink,
 } from "./Header.styles";
-import Modal from "./../Modal/Modal";
-import LoginForm from "./../LoginForm/LoginForm";
-import RegistrationForm from "./../RegistrationForm/RegistrationForm";
 
 const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

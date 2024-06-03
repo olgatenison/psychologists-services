@@ -9,7 +9,6 @@ import {
   Rating,
   HeartIcon,
   Tag,
-  Description,
   AdditionalInfo,
   Review,
   Reviewer,
@@ -22,6 +21,7 @@ import {
 } from "./Card.styles.js";
 import svg from "../../../img/svg/sprite.svg";
 import start from "../../../img/svg/star.svg";
+import MainTxt from "./../../generic/MainTxt/MainTxt";
 
 const Card = () => {
   const [expanded, setExpanded] = useState(false);
@@ -53,12 +53,20 @@ const Card = () => {
         </Rating>
       </CardHeader>
       <CardInfo>
-        <Tag>Experience: 12 years</Tag>
-        <Tag>License: Licensed Psychologist (License #67890)</Tag>
-        <Tag>Specialization: Depression and Mood Disorders</Tag>
-        <Tag>Initial consultation: Free 45-minute initial consultation</Tag>
+        <Tag>
+          Experience:<span>12 years</span>{" "}
+        </Tag>
+        <Tag>
+          License: <span>Licensed Psychologist (License #67890)</span>
+        </Tag>
+        <Tag>
+          Specialization:<span>Depression and Mood Disorders</span>{" "}
+        </Tag>
+        <Tag>
+          Initial consultation: <span>Free 45-minute initial consultation</span>
+        </Tag>
       </CardInfo>
-      <Description>
+      <MainTxt>
         Dr. Sarah Davis is a highly experienced and licensed psychologist
         specializing in Depression and Mood Disorders. With 12 years of
         practice, she has helped numerous individuals overcome their depression
@@ -66,7 +74,7 @@ const Card = () => {
         and understanding approach to therapy, making her clients feel
         comfortable and supported throughout their journey to better mental
         health.
-      </Description>
+      </MainTxt>
       {expanded && (
         <AdditionalInfo>
           <Review>

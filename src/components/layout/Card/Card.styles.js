@@ -78,11 +78,6 @@ export const Tag = styled.span`
   font-size: 14px;
 `;
 
-export const Description = styled.p`
-  font-size: 16px;
-  color: #333;
-`;
-
 export const AdditionalInfo = styled.div`
   margin-top: 20px;
 `;
