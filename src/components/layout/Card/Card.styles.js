@@ -7,7 +7,11 @@ export const CardContainer = styled.div`
   max-width: 800px;
   margin: 20px auto;
 `;
-
+export const FirstWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+`;
 export const CardHeader = styled.div`
   display: flex;
   align-items: flex-start;
@@ -62,20 +66,32 @@ export const HeartIcon = styled.svg`
   height: 26px;
   fill: ${({ theme }) => theme.colors.white};
   stroke: ${({ theme }) => theme.colors.black};
+  transition: all 0.3s linear;
+  :hover {
+    fill: ${({ theme }) => theme.colors.main_accent};
+    stroke: ${({ theme }) => theme.colors.main_accent};
+  }
 `;
 
 export const CardInfo = styled.div`
   display: flex;
   justify-content: start;
+  flex-wrap: wrap;
   gap: 10px;
   margin: 20px 0;
 `;
 
-export const Tag = styled.span`
-  background-color: #f0f0f0;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 14px;
+export const Tag = styled.p`
+  background-color: ${({ theme }) => theme.colors.tag};
+  color: ${({ theme }) => theme.colors.grey};
+  padding: 8px 16px;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  span {
+    color: ${({ theme }) => theme.colors.black};
+  }
 `;
 
 export const AdditionalInfo = styled.div`
@@ -86,6 +102,7 @@ export const Review = styled.div`
   display: flex;
   align-items: flex-start;
   margin-bottom: 20px;
+  flex-direction: column;
 `;
 
 export const Reviewer = styled.div`
@@ -95,21 +112,24 @@ export const Reviewer = styled.div`
 `;
 
 export const ReviewerImage = styled.div`
-  background-color: #ccc;
+  background-color: ${({ theme }) => theme.colors.light_accent};
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 20px;
-  color: #fff;
+  color: ${({ theme }) => theme.colors.main_accent};
   margin-right: 10px;
+  font-weight: 500;
 `;
 
 export const ReviewerName = styled.p`
   font-size: 16px;
+  color: ${({ theme }) => theme.colors.black};
   margin: 0;
+  font-weight: 500;
 `;
 
 export const ReviewerRating = styled.span`
@@ -143,12 +163,17 @@ export const Button = styled.button`
 export const ReadMoreButton = styled.button`
   background-color: transparent;
   border: none;
-  color: #007bff;
+  color: ${({ theme }) => theme.colors.black};
   cursor: pointer;
   font-size: 16px;
-  margin-top: 20px;
-
+  margin-top: 14px;
+  padding-left: 0;
+  font-weight: 500;
+  line-height: 24px;
+  text-decoration: underline;
+  transition: all 0.3s linear;
   &:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    color: ${({ theme }) => theme.colors.grey};
   }
 `;

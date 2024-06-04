@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./components/pages/Home";
 
 import Header from "./components/layout/Header/Header";
@@ -11,10 +11,14 @@ export const App = () => {
 
   return (
     <>
-      <ContainerWrap>
-        <Header />
-        <HomePage />
-      </ContainerWrap>
+      <BrowserRouter>
+        <ContainerWrap>
+          <Header />
+          <Routes>
+            <Route index path="/" element={<HomePage />}></Route>
+          </Routes>
+        </ContainerWrap>
+      </BrowserRouter>
     </>
   );
 };

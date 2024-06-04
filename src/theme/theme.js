@@ -12,6 +12,7 @@ export const theme = {
     gray50: "#7d7e7b",
     gray30: "#babab9",
     gray10: "#e4e5e4",
+    tag: "#F3F3F3",
 
     yellow: "#FFC531",
     green_online: "#38CD3E",

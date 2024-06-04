@@ -13,6 +13,7 @@ export const MainButtonStyled = styled.button`
   align-items: center;
   width: fit-content;
   text-overflow: ellipsis;
+  transition: all 0.3s linear;
   &:hover {
     background-color: ${({ theme }) => theme.colors.hoverred_accent};
   }
