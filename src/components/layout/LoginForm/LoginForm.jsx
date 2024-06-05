@@ -3,7 +3,8 @@ import SectionTitle from "./../../generic/SectionTitle/SectionTitle";
 import MainTxt from "./../../generic/MainTxt/MainTxt";
 import TextInput from "./../../generic/Input/TextInput.jsx";
 import PasswordInput from "./../../generic/Input/PasswordInput.jsx";
-import { FormWrapper, StyledAccentButton } from "./LoginForn.styles.js";
+import { FormWrapper } from "./LoginForn.styles.js";
+import FormButton from "./../../generic/FormButton/FormButton.jsx";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -30,7 +31,7 @@ const LoginForm = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <StyledAccentButton type="submit">Log In</StyledAccentButton>
+        <FormButton type="submit">Log In</FormButton>
       </FormWrapper>
     </div>
   );

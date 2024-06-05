@@ -11,7 +11,3 @@ export const FormWrapper = styled.div`
   width: 100%;
   max-width: 438px;
 `;
-
-export const StyledAccentButton = styled(AccentButton)`
-  width: 100%;
-`;
