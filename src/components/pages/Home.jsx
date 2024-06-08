@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import MainTitle from "../generic/MainTitle/MainTitle";
+import MainTitle from "../generic/MainTitle/MainTitle.jsx";
 import MainButton from "../generic/MainButton/MainButton.jsx";
 import {
   HomeSection,
@@ -15,7 +15,7 @@ import {
 } from "./Home.styles.js";
 import main from "./../../img/main.jpg";
 // import Card from "../layout/Card/Card.jsx";
-import Modal from "./../layout/Modal/Modal.jsx";
+import Modal from "../layout/Modal/Modal.jsx";
 import svg from "../../img/svg/sprite.svg";
 
 const HomePage = () => {
