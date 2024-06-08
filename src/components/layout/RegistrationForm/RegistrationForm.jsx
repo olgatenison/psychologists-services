@@ -8,6 +8,7 @@ import TextInput from "./../../generic/Input/TextInput.jsx";
 import PasswordInput from "./../../generic/Input/PasswordInput.jsx";
 import { FormWrapper } from "./RegistrationForm.styles.js";
 import FormButton from "./../../generic/FormButton/FormButton.jsx";
+
 import { auth } from "./../../../firebase.js";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { toast, ToastContainer } from "react-toastify";

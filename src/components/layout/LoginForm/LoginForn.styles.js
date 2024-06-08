@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import AccentButton from "../../generic/AccentButton/AccentButton";
 
 export const FormWrapper = styled.div`
   display: flex;
@@ -7,7 +6,9 @@ export const FormWrapper = styled.div`
   align-items: center;
   justify-content: center;
   padding-top: 40px;
+  width: 438px;
 
-  width: 100%;
-  max-width: 438px;
+  form {
+    width: 100%;
+  }
 `;
