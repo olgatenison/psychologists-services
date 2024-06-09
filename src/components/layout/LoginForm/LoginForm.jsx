@@ -18,7 +18,7 @@ const validationSchema = Yup.object({
   password: Yup.string().required("Required"),
 });
 
-const LoginForm = () => {
+const LoginForm = ({ onLogin }) => {
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -37,6 +37,7 @@ const LoginForm = () => {
         toast.success("Log In successful!");
         setSubmitting(false);
         resetForm();
+        onLogin(user); // Вызов функции onLogin при успешном входе
       } catch (error) {
         console.error("Error logging in:", error);
         toast.error(error.message);

@@ -1,10 +1,10 @@
-import MainTitle from "../../generic/MainTitle/MainTitle";
+import React from "react";
 
 const FavoritesPage = () => {
   return (
-    <>
-      <MainTitle>Favorites</MainTitle>
-    </>
+    <div>
+      <h1>Favorites Page</h1>
+    </div>
   );
 };
 

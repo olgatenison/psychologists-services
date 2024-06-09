@@ -14,6 +14,7 @@ export const OutlineButtonStyled = styled.button`
   width: fit-content;
   text-overflow: ellipsis;
   transition: all 0.3s linear;
+
   &:hover {
     border: 2px solid ${({ theme }) => theme.colors.main_accent};
   }

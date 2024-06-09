@@ -1,4 +1,3 @@
-// RegistrationForm.js
 import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -8,13 +7,12 @@ import TextInput from "./../../generic/Input/TextInput.jsx";
 import PasswordInput from "./../../generic/Input/PasswordInput.jsx";
 import { FormWrapper } from "./RegistrationForm.styles.js";
 import FormButton from "./../../generic/FormButton/FormButton.jsx";
-
 import { auth } from "./../../../firebase.js";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const RegistrationForm = () => {
+const RegistrationForm = ({ onRegister }) => {
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -46,6 +44,7 @@ const RegistrationForm = () => {
         toast.success("Registration successful!");
         setSubmitting(false);
         resetForm();
+        onRegister(user); // Вызов функции onRegister при успешной регистрации
       } catch (error) {
         console.error("Error registering user:", error);
         toast.error(error.message);

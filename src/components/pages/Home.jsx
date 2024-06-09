@@ -17,8 +17,9 @@ import main from "./../../img/main.jpg";
 // import Card from "../layout/Card/Card.jsx";
 import Modal from "../layout/Modal/Modal.jsx";
 import svg from "../../img/svg/sprite.svg";
+import { Navigate } from "react-router-dom";
 
-const HomePage = () => {
+const HomePage = ({ user }) => {
   // open and closeModal using Portal
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => setIsModalOpen(true);
