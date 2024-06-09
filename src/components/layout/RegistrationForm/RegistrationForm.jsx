@@ -7,8 +7,9 @@ import TextInput from "./../../generic/Input/TextInput.jsx";
 import PasswordInput from "./../../generic/Input/PasswordInput.jsx";
 import { FormWrapper } from "./RegistrationForm.styles.js";
 import FormButton from "./../../generic/FormButton/FormButton.jsx";
+
 import { auth } from "./../../../firebase.js";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -40,11 +41,17 @@ const RegistrationForm = ({ onRegister }) => {
           values.password
         );
         const user = userCredential.user;
+
+        // Обновление профиля пользователя с именем
+        await updateProfile(user, {
+          displayName: values.name,
+        });
+
         console.log("User registered:", user);
         toast.success("Registration successful!");
         setSubmitting(false);
         resetForm();
-        onRegister(user); // Вызов функции onRegister при успешной регистрации
+        onRegister(user);
       } catch (error) {
         console.error("Error registering user:", error);
         toast.error(error.message);

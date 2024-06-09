@@ -1,7 +1,9 @@
-// Card.jsx
 import React, { useState } from "react";
+import MainTxt from "./../../generic/MainTxt/MainTxt";
 import {
   CardContainer,
+  CardPortrait,
+  Online,
   FirstWrapper,
   CardHeader,
   CardInfo,
@@ -16,15 +18,14 @@ import {
   ReviewerImage,
   ReviewerName,
   ReviewerRating,
-  ReviewerComment,
   Button,
   ReadMoreButton,
 } from "./Card.styles.js";
+
 import svg from "../../../img/svg/sprite.svg";
 import start from "../../../img/svg/star.svg";
-import MainTxt from "./../../generic/MainTxt/MainTxt";
 
-const Card = () => {
+const Card = ({ psychologist }) => {
   const [expanded, setExpanded] = useState(false);
 
   const handleReadMore = () => {
@@ -33,85 +34,75 @@ const Card = () => {
 
   return (
     <CardContainer>
-      <img src="profile-image.jpg" alt="Dr. Sarah Davis" />
+      <CardPortrait>
+        <img src={psychologist.avatar_url} alt={psychologist.name} />
+        <Online></Online>
+      </CardPortrait>
       <FirstWrapper>
         <CardHeader>
           <div>
             <Role>Psychologist</Role>
-            <Name>Dr. Sarah Davis</Name>{" "}
+            <Name>{psychologist.name}</Name>
           </div>
           <Rating>
             <img src={start} alt="star" className="star" />
             <div>
-              <span className="tostar"> Rating: 4.75</span>
+              <span className="tostar"> Rating: {psychologist.rating}</span>
             </div>
             <div className="grey">|</div>
             <div>
-              Price / 1 hour:<span className="green"> 120$</span>
+              Price / 1 hour:{" "}
+              <span className="green"> {psychologist.price_per_hour}$</span>
             </div>
             <HeartIcon>
               <use href={`${svg}#icon-like`} />
             </HeartIcon>
           </Rating>
         </CardHeader>
+
         <CardInfo>
           <Tag>
-            Experience:<span>12 years</span>{" "}
+            Experience: <span>{psychologist.experience}</span>
           </Tag>
           <Tag>
-            License: <span>Licensed Psychologist (License #67890)</span>
+            License: <span>{psychologist.license}</span>
           </Tag>
           <Tag>
-            Specialization:<span>Depression and Mood Disorders</span>{" "}
+            Specialization: <span>{psychologist.specialization}</span>
           </Tag>
           <Tag>
             Initial consultation:{" "}
-            <span>Free 45-minute initial consultation</span>
+            <span>{psychologist.initial_consultation}</span>
           </Tag>
         </CardInfo>
-        <MainTxt>
-          Dr. Sarah Davis is a highly experienced and licensed psychologist
-          specializing in Depression and Mood Disorders. With 12 years of
-          practice, she has helped numerous individuals overcome their
-          depression and regain control of their lives. Dr. Davis is known for
-          her empathetic and understanding approach to therapy, making her
-          clients feel comfortable and supported throughout their journey to
-          better mental health.
-        </MainTxt>
-      </FirstWrapper>
 
-      {expanded && (
-        <AdditionalInfo>
-          <Review>
-            <Reviewer>
-              <ReviewerImage>M</ReviewerImage>
-              <div>
-                <ReviewerName>Michael Brown</ReviewerName>
-                <ReviewerRating>⭐ 4.5</ReviewerRating>
-              </div>
-            </Reviewer>
-            <MainTxt>
-              Dr. Davis has been a great help in managing my depression. Her
-              insights have been valuable.
-            </MainTxt>
-          </Review>
-          <Review>
-            <Reviewer>
-              <ReviewerImage>L</ReviewerImage>
-              <ReviewerName>Linda Johnson</ReviewerName>
-              <ReviewerRating>⭐ 5.0</ReviewerRating>
-            </Reviewer>
-            <MainTxt>
-              I'm very satisfied with Dr. Davis's therapy. She's understanding
-              and empathetic.
-            </MainTxt>
-          </Review>
-          <Button>Make an appointment</Button>
-        </AdditionalInfo>
-      )}
-      <ReadMoreButton onClick={handleReadMore}>
-        {expanded ? "Read less" : "Read more"}
-      </ReadMoreButton>
+        <MainTxt>{psychologist.about}</MainTxt>
+
+        {expanded && (
+          <AdditionalInfo>
+            {psychologist.reviews.map((review, index) => (
+              <Review key={index}>
+                <Reviewer>
+                  <ReviewerImage>{review.reviewer.charAt(0)}</ReviewerImage>
+                  <div>
+                    <ReviewerName>{review.reviewer}</ReviewerName>
+                    <ReviewerRating>
+                      <img src={start} alt="star" className="star" />
+                      {review.rating}
+                    </ReviewerRating>
+                  </div>
+                </Reviewer>
+                <MainTxt>{review.comment}</MainTxt>
+              </Review>
+            ))}
+            <Button>Make an appointment</Button>
+          </AdditionalInfo>
+        )}
+
+        <ReadMoreButton onClick={handleReadMore}>
+          {expanded ? "Read less" : "Read more"}
+        </ReadMoreButton>
+      </FirstWrapper>
     </CardContainer>
   );
 };

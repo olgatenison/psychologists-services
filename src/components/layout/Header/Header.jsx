@@ -97,7 +97,7 @@ const Header = ({ user, onLogin, onRegister }) => {
             </>
           ) : (
             <>
-              <UserLogo>{user.email}</UserLogo>
+              <UserLogo>{user.displayName}</UserLogo>
               <OutlineButton onClick={handleSignOut}>Log out</OutlineButton>
             </>
           )}

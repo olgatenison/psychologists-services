@@ -21,7 +21,7 @@ export const NavItem = styled.li`
   font-size: 16px;
   font-weight: 400;
   position: relative;
-
+  transition: all 0.3s linear;
   a {
     text-decoration: none;
     color: inherit;
@@ -38,11 +38,6 @@ export const NavItem = styled.li`
     left: 50%;
     transform: translateX(-50%);
     background-color: ${({ theme }) => theme.colors.main_accent};
-  }
-  transition: all 0.3s linear;
-  &:hover,
-  &:focus {
-    color: ${({ theme }) => theme.colors.main_accent};
   }
 `;
 

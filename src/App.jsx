@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import HomePage from "./components/pages/Home";
 import FavoritesPage from "./components/pages/Favorites/Favorites.jsx";
 import PsychologistsPage from "./components/pages/Psychologists/Psychologists.jsx";
@@ -36,23 +36,21 @@ export const App = () => {
   }
 
   return (
-    <BrowserRouter>
-      <ContainerWrap>
-        <Header user={user} onLogin={handleLogin} onRegister={handleRegister} />
-        <Routes>
-          <Route path="/" element={<HomePage user={user} />} />
-          <Route path="/psychologists" element={<PsychologistsPage />} />
-          <Route
-            path="/favorites"
-            element={
-              <ProtectedRoute user={user}>
-                <FavoritesPage />
-              </ProtectedRoute>
-            }
-          />
-          <Route path="*" element={<h2>Page Not Found</h2>} />
-        </Routes>
-      </ContainerWrap>
-    </BrowserRouter>
+    <ContainerWrap>
+      <Header user={user} onLogin={handleLogin} onRegister={handleRegister} />
+      <Routes>
+        <Route path="/" element={<HomePage user={user} />} />
+        <Route path="/psychologists" element={<PsychologistsPage />} />
+        <Route
+          path="/favorites"
+          element={
+            <ProtectedRoute user={user}>
+              <FavoritesPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route path="*" element={<h2>Page Not Found</h2>} />
+      </Routes>
+    </ContainerWrap>
   );
 };

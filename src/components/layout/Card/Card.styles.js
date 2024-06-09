@@ -1,11 +1,45 @@
 import styled from "@emotion/styled";
+
 export const CardContainer = styled.div`
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
   padding: 20px;
-  max-width: 800px;
+  width: 1184px;
   margin: 20px auto;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  gap: 24px;
+`;
+export const CardPortrait = styled.div`
+  width: 120px;
+  height: 120px;
+  border-radius: 30px;
+  border: 2px solid ${({ theme }) => theme.colors.light_accent};
+  background-color: ${({ theme }) => theme.colors.white};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  position: relative;
+  img {
+    width: 96px;
+    height: 96px;
+    border-radius: 15px;
+    position: relative;
+  }
+`;
+export const Online = styled.div`
+  position: absolute;
+  z-index: 30;
+  top: 10px;
+  right: 10px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 3px solid white;
+  background-color: ${({ theme }) => theme.colors.green_online};
 `;
 export const FirstWrapper = styled.div`
   display: flex;
@@ -108,7 +142,8 @@ export const Review = styled.div`
 export const Reviewer = styled.div`
   display: flex;
   align-items: center;
-  margin-right: 10px;
+  margin-right: 12px;
+  margin-bottom: 16px;
 `;
 
 export const ReviewerImage = styled.div`
@@ -132,10 +167,14 @@ export const ReviewerName = styled.p`
   font-weight: 500;
 `;
 
-export const ReviewerRating = styled.span`
-  font-size: 16px;
-  color: #888;
-  margin-left: 5px;
+export const ReviewerRating = styled.div`
+  font-size: 14px;
+  font-weight: 500;
+
+  color: ${({ theme }) => theme.colors.black};
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
 `;
 
 export const ReviewerComment = styled.p`
@@ -161,6 +200,7 @@ export const Button = styled.button`
 `;
 
 export const ReadMoreButton = styled.button`
+  text-align: left;
   background-color: transparent;
   border: none;
   color: ${({ theme }) => theme.colors.black};

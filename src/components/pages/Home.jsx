@@ -17,7 +17,7 @@ import main from "./../../img/main.jpg";
 // import Card from "../layout/Card/Card.jsx";
 import Modal from "../layout/Modal/Modal.jsx";
 import svg from "../../img/svg/sprite.svg";
-import { Navigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const HomePage = ({ user }) => {
   // open and closeModal using Portal
@@ -39,14 +39,16 @@ const HomePage = ({ user }) => {
             guide in your own life with the help of our experienced
             psychologists.
           </Subtitle>
-          <MainButton>
-            <div>
-              <p>Get started</p>
-              <svg>
-                <use href={`${svg}#icon-arrow-2`} />
-              </svg>
-            </div>
-          </MainButton>
+          <NavLink to="/psychologists">
+            <MainButton>
+              <div>
+                <p>Get started</p>
+                <svg>
+                  <use href={`${svg}#icon-arrow-2`} />
+                </svg>
+              </div>
+            </MainButton>
+          </NavLink>
         </LeftColumn>
 
         <RightColumn>
