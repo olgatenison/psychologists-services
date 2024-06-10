@@ -21,17 +21,26 @@ import {
   Button,
   ReadMoreButton,
 } from "./Card.styles.js";
-
 import svg from "../../../img/svg/sprite.svg";
 import start from "../../../img/svg/star.svg";
+import Appointment from "../Appointment/Appointment.jsx";
+import Modal from "./../Modal/Modal";
 
 const Card = ({ psychologist }) => {
   const [expanded, setExpanded] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleReadMore = () => {
     setExpanded(!expanded);
   };
 
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
   return (
     <CardContainer>
       <CardPortrait>
@@ -95,7 +104,7 @@ const Card = ({ psychologist }) => {
                 <MainTxt>{review.comment}</MainTxt>
               </Review>
             ))}
-            <Button>Make an appointment</Button>
+            <Button onClick={openModal}>Make an appointment</Button>
           </AdditionalInfo>
         )}
 
@@ -103,6 +112,11 @@ const Card = ({ psychologist }) => {
           {expanded ? "Read less" : "Read more"}
         </ReadMoreButton>
       </FirstWrapper>
+
+      {/* modal window */}
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        <Appointment psychologist={psychologist} />
+      </Modal>
     </CardContainer>
   );
 };
