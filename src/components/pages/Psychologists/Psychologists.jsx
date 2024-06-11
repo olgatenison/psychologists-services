@@ -4,20 +4,24 @@ import Card from "../../layout/Card/Card";
 import {
   PsychologistsPageContainer,
   NoResultsMessage,
+  LoadMoreButton,
 } from "./Psychologists.Styles";
 import Filter from "./../../layout/Filter/Filter";
 
 const PsychologistsPage = () => {
   const [psychologists, setPsychologists] = useState([]);
   const [filteredPsychologists, setFilteredPsychologists] = useState([]);
+  const [visiblePsychologists, setVisiblePsychologists] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [loadMoreCount, setLoadMoreCount] = useState(3);
 
   useEffect(() => {
     const fetchPsychologists = async () => {
       setLoading(true);
       const data = await getPsychologists();
       setPsychologists(data);
-      setFilteredPsychologists(data); // Инициализируем отфильтрованный список
+      setFilteredPsychologists(data);
+      setVisiblePsychologists(data.slice(0, loadMoreCount));
       setLoading(false);
     };
 
@@ -56,6 +60,13 @@ const PsychologistsPage = () => {
         break;
     }
     setFilteredPsychologists(sortedPsychologists);
+    setVisiblePsychologists(sortedPsychologists.slice(0, loadMoreCount));
+  };
+
+  const handleLoadMore = () => {
+    const newCount = loadMoreCount + 3;
+    setLoadMoreCount(newCount);
+    setVisiblePsychologists(filteredPsychologists.slice(0, newCount));
   };
 
   if (loading) {
@@ -64,19 +75,22 @@ const PsychologistsPage = () => {
 
   return (
     <>
-      <Filter psychologists={psychologists} onFilter={handleFilter} />
+      <Filter onFilter={handleFilter} />
       <PsychologistsPageContainer>
         <ul>
-          {filteredPsychologists.length === 0 ? (
+          {visiblePsychologists.length === 0 ? (
             <NoResultsMessage>
               No psychologists match the selected filter criteria.
             </NoResultsMessage>
           ) : (
-            filteredPsychologists.map((psychologist, index) => (
+            visiblePsychologists.map((psychologist, index) => (
               <Card key={index} psychologist={psychologist} />
             ))
           )}
         </ul>
+        {visiblePsychologists.length < filteredPsychologists.length && (
+          <LoadMoreButton onClick={handleLoadMore}>Load More</LoadMoreButton>
+        )}
       </PsychologistsPageContainer>
     </>
   );

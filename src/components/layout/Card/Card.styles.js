@@ -5,7 +5,7 @@ export const CardContainer = styled.div`
   border-radius: 10px;
   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
   padding: 20px;
-  width: 1184px;
+  width: 1180px;
   margin: 20px auto;
   display: flex;
   flex-direction: row;
@@ -185,15 +185,16 @@ export const ReviewerComment = styled.p`
 
 export const Button = styled.button`
   background-color: ${({ theme }) => theme.colors.main_accent};
-  color: #fff;
+  color: ${({ theme }) => theme.colors.white};
   border: none;
   border-radius: 30px;
-  padding: 10px 20px;
+  padding: 14px 32px;
   font-size: 16px;
+  font-weight: 500;
   cursor: pointer;
   display: block;
   margin-top: 20px;
-
+  transition: all 0.3s linear;
   &:hover {
     background-color: ${({ theme }) => theme.colors.hoverred_accent};
   }

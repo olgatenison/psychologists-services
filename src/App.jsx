@@ -23,12 +23,10 @@ export const App = () => {
 
   const handleLogin = (user) => {
     setUser(user);
-    // Закрываем модалку после успешного входа
   };
 
   const handleRegister = (user) => {
     setUser(user);
-    // Закрываем модалку после успешной регистрации
   };
 
   if (isLoading) {
